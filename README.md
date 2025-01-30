@@ -5,14 +5,14 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 
 
 ## 백준
-- [] Bronze
+- [ ] Bronze
 
 ## 프로그래머스
 ### Algorithm
-- []
+- [ ]
 
 ### SQL
-- []
+- [ ]
 
 ## SWEA
-- []
+- [ ]
