@@ -9,10 +9,10 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 
 ## 프로그래머스
 ### Algorithm
-- [ ]
+- [ ] 빈 값
 
 ### SQL
-- [ ]
+- [ ] NULL
 
 ## SWEA
-- [ ]
+- [ ] 입니다.
