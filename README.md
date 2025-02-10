@@ -5,7 +5,9 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 
 
 ## 백준
-- [ ] Bronze
+- [X] Bronze
+- [ ] Silver
+      - 5LV (2/10)
 
 ## 프로그래머스
 ### Algorithm
