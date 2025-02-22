@@ -1,14 +1,20 @@
-N = int(input()) # 색종이의 수
+N = int(input())
+info = []
+array = [[-1] * 1001 for _ in range(1001)]
 
-board = [[0] * 1001 for _ in range(1001)]
+max_index_height, max_index_width = 0, 0  # 최대 인덱스를 저장할 변수 선언
+for k in range(N):
+    x1, y1, w, h = list(map(int, input().split()))  # 각각 x,y,넓이,높이 정보를 받는다.
 
-for n in range(1, N+1):
-    x1, y1, width, height = map(int,input().split()) # 색종이의 좌표 및 크기
-    x2, y2 = x1 + width, y1 + height # 색종이의 범위는 가로, 세로의 길이를 더 추가야해한다.
-    for nx in range(x1, x2):
-        for ny in range(y1, y2):
-            board[nx][ny] = n
+    if max_index_height < y1 + h:  # 최대 행의 인덱스가 있다면.
+        max_index_height = y1 + h  # 그 행을 최대행인덱스로 설정해준다.
 
-for num in range(1, N+1): # 색종이의 범위를 읽어서 count 후 출력한다.
-    count = sum(row.count(num) for row in board)
-    print(count)
+    for a in range(y1, y1 + h):  # 높이 길이만큼돈다.
+        array[a][x1:(x1 + w)] = [k] * w  # x1 ~ x1+w 까지의 배열을 모두 [k] * w 로 바꿔준다.
+
+for k in range(N):  # N개수 만큼 돈다.
+    count = 0  # 넓이를 저장할 변수 선언
+    for i in range(max_index_height):  # 배열 길이만큼돈다.
+        count += array[i].count(k)
+
+    print(count)  # 해당 개수를 출력
