@@ -1,15 +1,16 @@
-# 2563번 색종이
+# 11 : 57
 
-paper_count = int(input()) # 색종이 개수
+board = [[0]* 100 for _ in range(100)] # 색을 확일할 2차원 배열
 
-board = [[0]* 100 for _ in range(100)] # 가로 세로 크기가 100인 정사각졍 모양의 도화지
+T = int(input()) # 색종이 입력 횟수
+
+for _ in range(T):
+    x, y = map(int,input().split())
+    for xi in range(x,x+10):
+        for yi in range(y, y+10):
+            board[xi][yi] = 1
 count = 0
-for pc in range(paper_count):
-    x, y = map(int, input().split())
-    for x_row in range(x,x+10):
-        for y_col in range(y, y+10):
-            if board[x_row][y_col] == 0: # 비어있다면,
-                board[x_row][y_col] = 1  # 색을 채우겠다.
-                count+=1
+for row in board:
+    count += sum(row)
 
 print(count)
