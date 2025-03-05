@@ -1,0 +1,6 @@
+[submodule "private_folder"]
+	path = private_folder
+	url = https://github.com/SMASMC/Algorithm.git
+[submodule "SWEA"]
+	path = SWEA
+	url = https://github.com/SMASMC/Algorithm.git
