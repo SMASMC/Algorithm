@@ -1,0 +1,9 @@
+-- 코드를 입력하세요
+SELECT name, count(name) as count
+from ANIMAL_INS
+where name is not null
+group by name
+having count(name) >= 2
+order by name
+
+# not null 에다가, 이름 순으로 조회하기, count >=2
