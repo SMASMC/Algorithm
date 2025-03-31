@@ -1,0 +1,3 @@
+# 12 : 43
+SELECT count(ANIMAL_ID)
+from ANIMAL_Ins
