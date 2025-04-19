@@ -1,0 +1,8 @@
+# 13 : 47
+SELECT ANIMAL_TYPE, 
+(CASE WHEN NAME IS NULL then 'No name'
+ else name
+end) as name
+,
+SEX_UPON_INTAKE
+FROM ANIMAL_INS
