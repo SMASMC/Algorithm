@@ -1,0 +1,17 @@
+name: Trigger Sync on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send dispatch event to SSAFY-APS-Study
+        run: |
+          curl -X POST https://api.github.com/repos/SMASMC/SSAFY-APS-Study/dispatches \
+          -H "Accept: application/vnd.github.v3+json" \
+          -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+          -d '{"event_type":"sync_request"}'
