@@ -10,9 +10,9 @@ def solution(priorities, location):
     목표가 출력되는 순간의 카운트를 반환합니다.
     예외: priorities 비어있거나 location 범위 초과 시 -1 반환.
     """
-    # --- 입력 검증(데이터 없음/범위 일탈) ---
-    if not priorities or not (0 <= location < len(priorities)):
-        return -1
+    # # --- 입력 검증(데이터 없음/범위 일탈) ---
+    # if not priorities or not (0 <= location < len(priorities)):
+    #     return -1
 
     # --- 큐 구성 (priority, is_target) ---
     queue = deque((p, i == location) for i, p in enumerate(priorities))
