@@ -1,9 +1,4 @@
 def solution(number, k):
-    answer = ''
-    return answer
-
-from typing import *
-def solution(number, k):
     # number 숫자 문자열 (길이 2 ~ 1_000_000)
     # k 제거할 자릿수 (1 ~ len(number)-1)
     # 반환: k개 제거 후 만들 수 있는 '가장 큰 숫자' 문자열
