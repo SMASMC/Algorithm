@@ -1,30 +1,26 @@
-# 4779 칸토어 집합
+# 00: 09 간토어 집합
+
 import sys
+
 input = sys.stdin.readline
 
-def carve(chars, start_idx, segment_len):
-    # 길이가 1이면 더 이상 쪼갤 수 없음(기저 조건)
-    if segment_len == 1:
-        return
-    third = segment_len // 3
-
-    # 가운데 1/3 구간을 공백으로 채우기
+def cantor(chars, start_idx, segment):
+    if segment == 1:
+        return # 1이면, 중단하겠습니다.
+    third=segment // 3
     mid_start = start_idx + third
-    mid_end   = start_idx + 2 * third
-    for i in range(mid_start, mid_end):
-        chars[i] = ' '  # ← 대입(=) 주의
+    mid_end = start_idx + 2*third
+    chars[mid_start: mid_end] = ' ' * (mid_end - mid_start) # 가운데를 빈공간으로 저장
+    cantor(chars, start_idx, third) # 왼쪽에 빈공간 저장
+    cantor(chars, start_idx + 2*third, third) # 오른쪽에 빈공간 저장
 
-    # 왼쪽 1/3과 오른쪽 1/3에 대해 재귀
-    carve(chars, start_idx, third)
-    carve(chars, start_idx + 2 * third, third)
-
-# 입력은 여러 줄(EOF까지)
-for line in sys.stdin:
-    line = line.strip()
-    if not line:
-        continue
-    n = int(line)
-    total_len = 3 ** n
-    chars = ['-'] * total_len
-    carve(chars, 0, total_len)
-    print(''.join(chars))
+# 파일의 끝에서 입력을 멈춤. => EOF인데, try, except로 예외처리하면 됨.
+while True:
+    try:
+        N = int(input())
+        total_length = 3**N
+        chars = ['-']*total_length
+        cantor(chars, 0, total_length)
+        print(''.join(chars))
+    except:
+        break
